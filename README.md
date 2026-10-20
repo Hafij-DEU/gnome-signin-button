@@ -29,6 +29,22 @@ sits, so you can submit your password with the mouse or a touchscreen.
 
 ## Installation
 
+### One command
+
+This downloads the latest version, installs it system-wide (asks for your
+password), turns it on for the login screen and for your lock screen:
+
+```bash
+curl -fsSL https://github.com/Hafij-DEU/gnome-signin-button/archive/refs/heads/main.tar.gz | tar xz -C /tmp && sudo /tmp/gnome-signin-button-main/install.sh && { gsettings get org.gnome.shell enabled-extensions | grep -q "'signin-button@hafij-deu.github.io'" || gsettings set org.gnome.shell enabled-extensions "$(gsettings get org.gnome.shell enabled-extensions | sed "s/]$/, 'signin-button@hafij-deu.github.io']/; s/^@as \[, /[/")"; }
+```
+
+Then log out and back in. Run the same command again to update.
+
+With [App Hub](https://github.com/Hafij-DEU/Application-hub), install it from
+**My Apps ▸ Extensions** instead. App Hub also updates it.
+
+### Step by step
+
 1. Get the code:
 
    ```bash
