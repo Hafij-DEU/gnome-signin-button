@@ -50,8 +50,14 @@ sits, so you can submit your password with the mouse or a touchscreen.
 3. Enable it for your own lock screen:
 
    ```bash
-   gnome-extensions enable signin-button@hafij-deu.github.io
+   gsettings set org.gnome.shell enabled-extensions "$(gsettings get org.gnome.shell enabled-extensions | sed "s/]$/, 'signin-button@hafij-deu.github.io']/; s/^@as \[, /[/")"
    ```
+
+   On Wayland the running GNOME Shell does not see a newly installed
+   extension until you log in again, so `gnome-extensions enable` reports
+   *"does not exist"* right after install. The command above adds it to the
+   enabled list directly. After the next login, `gnome-extensions enable`
+   works too.
 
 4. Log out and back in (on Wayland GNOME only loads new extensions at login).
    The login screen shows the button from the next logout or reboot.
@@ -63,10 +69,13 @@ If you only want the button on the lock screen, install it for your user:
 ```bash
 mkdir -p ~/.local/share/gnome-shell/extensions
 cp -r signin-button@hafij-deu.github.io ~/.local/share/gnome-shell/extensions/
-gnome-extensions enable signin-button@hafij-deu.github.io
 ```
 
-Then log out and back in.
+Log out and back in, then run:
+
+```bash
+gnome-extensions enable signin-button@hafij-deu.github.io
+```
 
 ## Updating
 
