@@ -1,0 +1,13 @@
+.login-dialog-button.cancel-button.signin-button {
+  color: -st-accent-fg-color;
+  background-color: -st-accent-color;
+}
+
+.login-dialog-button.cancel-button.signin-button:hover,
+.login-dialog-button.cancel-button.signin-button:focus {
+  background-color: st-lighten(-st-accent-color, 8%);
+}
+
+.login-dialog-button.cancel-button.signin-button:active {
+  background-color: st-darken(-st-accent-color, 8%);
+}

@@ -1,0 +1,9 @@
+{
+  "uuid": "signin-button@hafij-deu.github.io",
+  "name": "Sign-In Button",
+  "description": "Adds a clickable sign-in arrow next to the password field on the login and lock screens.",
+  "shell-version": ["50"],
+  "session-modes": ["user", "unlock-dialog", "gdm"],
+  "version": 1,
+  "url": "https://github.com/Hafij-DEU/gnome-signin-button"
+}
